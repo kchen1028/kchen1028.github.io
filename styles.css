@@ -467,8 +467,8 @@ img { max-width: 100%; display: block; }
 
 .avatar-wrap {
   position: relative;
-  width: 280px;
-  height: 280px;
+  width: 320px;
+  height: 320px;
 }
 
 .avatar-ring {
@@ -490,6 +490,19 @@ img { max-width: 100%; display: block; }
 
 @keyframes spin {
   to { transform: rotate(360deg); }
+}
+
+.avatar-img {
+  position: absolute;
+  inset: 12px;
+  width: calc(100% - 24px);
+  height: calc(100% - 24px);
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 20%;
+  z-index: 1;
+  box-shadow: 0 8px 32px rgba(30, 58, 138, 0.25);
+  border: 4px solid white;
 }
 
 .avatar-initials {
