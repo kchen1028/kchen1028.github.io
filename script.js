@@ -18,6 +18,59 @@ window.addEventListener('scroll', () => {
   }
 });
 
+// 数字滚动动画
+function animateCounter(el, target, duration = 1500) {
+  const start = 0;
+  const startTime = performance.now();
+
+  function update(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const easeOut = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+    const current = Math.floor(start + (target - start) * easeOut);
+    el.textContent = current;
+
+    if (progress < 1) {
+      requestAnimationFrame(update);
+    } else {
+      el.textContent = target;
+    }
+  }
+
+  requestAnimationFrame(update);
+}
+
+// 检测 hero stats 进入视口时触发数字动画
+const heroStats = document.querySelectorAll('.stat-value span:first-child');
+let statsAnimated = false;
+
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !statsAnimated) {
+      statsAnimated = true;
+      heroStats.forEach((el, i) => {
+        const target = parseInt(el.textContent, 10);
+        if (!isNaN(target) && target > 0) {
+          const original = el.textContent;
+          el.textContent = '0';
+          setTimeout(() => {
+            animateCounter(el, target, 1400 + i * 200);
+            // 动画结束后恢复带单位的文本
+            setTimeout(() => {
+              el.textContent = original;
+            }, 1400 + i * 200 + 100);
+          }, i * 150);
+        }
+      });
+    }
+  });
+}, { threshold: 0.5 });
+
+const heroStatsSection = document.querySelector('.hero-stats');
+if (heroStatsSection) {
+  statsObserver.observe(heroStatsSection);
+}
+
 // 回到顶部
 backToTop.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });

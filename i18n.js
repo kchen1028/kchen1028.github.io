@@ -6,6 +6,7 @@ const translations = {
     // Meta
     'meta.title': '陈凯 · 电芯可靠性工程师 | 宁德时代',
     'meta.description': '陈凯 - 宁德时代可靠安全部商用车电芯团队负责人，技术创新总裁金奖获得者，专注电芯安全与可靠性管理',
+    'meta.ogDescription': '宁德时代技术创新总裁金奖获得者，3年电芯可靠性经验，商用车电芯团队负责人',
 
     // Nav
     'nav.about': '关于',
@@ -178,6 +179,9 @@ const translations = {
     'skills.cat3.s2.name': 'AI 辅助分析与决策',
     'skills.cat3.s3.name': '英语（爱尔兰留学 · 工作语言）',
     'skills.cat3.s4.name': 'MATLAB / Python 工程计算',
+    'skills.cat1.s5.name': '电芯失效分析与根因定位',
+    'skills.cat2.s5.name': '40+ 项目全生命周期管理',
+    'skills.cat3.s5.name': '锂电池 / 电解液 / 快充技术',
 
     // Awards
     'awards.tag': '06 / 荣誉奖项',
@@ -218,6 +222,7 @@ const translations = {
     // Meta
     'meta.title': 'Kai Chen · Battery Cell Reliability Engineer | CATL',
     'meta.description': 'Kai Chen - Team Lead of Commercial Vehicle Cell Reliability at CATL Reliability & Safety Department. Recipient of the President\'s Gold Award for Technological Innovation.',
+    'meta.ogDescription': 'President\'s Gold Award recipient at CATL. 3+ years in battery cell reliability. Commercial Vehicle Cell Team Lead.',
 
     // Nav
     'nav.about': 'About',
@@ -390,6 +395,9 @@ const translations = {
     'skills.cat3.s2.name': 'AI-Assisted Engineering & Decision-Making',
     'skills.cat3.s3.name': 'English (Professional Working Proficiency)',
     'skills.cat3.s4.name': 'MATLAB / Python for Engineering',
+    'skills.cat1.s5.name': 'Cell Failure Analysis & Root Cause Identification',
+    'skills.cat2.s5.name': '40+ Project Lifecycle Management',
+    'skills.cat3.s5.name': 'Li-ion Battery / Electrolyte / Fast-Charging Tech',
 
     // Awards
     'awards.tag': '06 / Awards',
