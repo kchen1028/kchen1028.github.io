@@ -16,17 +16,52 @@
   <meta property="og:url" content="https://kchen1028.github.io" />
   <meta property="og:locale" content="zh_CN" />
   <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:site_name" content="陈凯 · Kai Chen" />
+  <meta property="og:image" content="https://kchen1028.github.io/og-cover.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="陈凯 · 电芯可靠性团队负责人 · 宁德时代" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="陈凯 · 电芯可靠性工程师" data-i18n-attr='{"content":"meta.title"}' />
   <meta name="twitter:description" content="CATL技术创新总裁金奖获得者 · 商用车电芯团队负责人" data-i18n-attr='{"content":"meta.ogDescription"}' />
+  <meta name="twitter:image" content="https://kchen1028.github.io/og-cover.png" />
+  <meta name="twitter:image:alt" content="陈凯 · 电芯可靠性团队负责人 · 宁德时代" />
 
   <link rel="canonical" href="https://kchen1028.github.io" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- 站点图标 -->
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="icon" href="favicon-48.png" type="image/png" sizes="48x48" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+  <!-- 字体走系统字体栈（见 styles.css），不加载外部 CDN -->
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- 结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "陈凯",
+    "alternateName": "Kai Chen",
+    "jobTitle": "电芯可靠性团队负责人",
+    "description": "宁德时代可靠安全部商用车电芯团队负责人，专注电芯安全与可靠性管理",
+    "worksFor": { "@type": "Organization", "name": "宁德时代新能源科技股份有限公司" },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "都柏林圣三一大学" },
+      { "@type": "CollegeOrUniversity", "name": "中国地质大学（北京）" }
+    ],
+    "knowsAbout": ["电芯可靠性", "电池安全", "FTA 失效分析", "FMEA", "加速寿命试验", "质量改善"],
+    "knowsLanguage": ["zh-CN", "en"],
+    "url": "https://kchen1028.github.io",
+    "image": "https://kchen1028.github.io/profile.jpg",
+    "award": ["宁德时代技术创新总裁金奖", "宁德时代硬骨头质量改善奖"]
+  }
+  </script>
 </head>
 <body>
   <!-- 顶部导航 -->
@@ -36,16 +71,19 @@
         <span class="logo-mark">CK</span>
         <span class="logo-text" data-i18n="nav.logo">陈凯</span>
       </a>
-      <ul class="nav-links">
+      <ul class="nav-links" id="navLinks">
         <li><a href="#about" data-i18n="nav.about">关于</a></li>
         <li><a href="#experience" data-i18n="nav.experience">工作</a></li>
         <li><a href="#projects" data-i18n="nav.projects">项目</a></li>
         <li><a href="#education" data-i18n="nav.education">教育</a></li>
         <li><a href="#skills" data-i18n="nav.skills">技能</a></li>
         <li><a href="#awards" data-i18n="nav.awards">荣誉</a></li>
+        <li class="nav-item-cta"><a href="#contact" data-i18n="nav.cta">联系我</a></li>
       </ul>
       <a href="#contact" class="nav-cta" data-i18n="nav.cta">联系我</a>
-      <button class="nav-toggle" id="navToggle" aria-label="menu">
+      <button class="nav-toggle" id="navToggle" type="button"
+              aria-label="打开菜单" aria-expanded="false" aria-controls="navLinks"
+              data-i18n-attr='{"aria-label":"nav.menuOpen"}'>
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -62,7 +100,7 @@
     <div class="hero-inner">
       <div class="hero-content">
         <div class="hero-badge">
-          <span class="badge-dot"></span>
+          <span class="badge-dot" aria-hidden="true"></span>
           <span data-i18n="hero.badge">在职 · 宁德时代</span>
         </div>
         <h1 class="hero-title">
@@ -70,7 +108,7 @@
           <span class="gradient-text" data-i18n="hero.title2">陈凯</span>
         </h1>
         <p class="hero-subtitle" data-i18n="hero.subtitle">商用车电芯团队负责人 · 宁德时代可靠安全部</p>
-        <p class="hero-desc" data-i18n="hero.desc">宁德时代技术创新总裁金奖获得者，3 年电芯可靠性经验。带领 6 人团队支撑 40+ 项目，主导商用车主力产品「天行电芯」全流程可靠性管理，推动质保能力从 <strong>8 年 80 万公里</strong> 提升至 <strong>15 年 150 万公里</strong>。</p>
+        <p class="hero-desc" data-i18n="hero.desc">宁德时代技术创新总裁金奖获得者，3 年电芯可靠性经验。带领 6 人团队支撑 40+ 项目，主导主力商用车电芯平台全流程可靠性管理，推动质保能力从 <strong>8 年 80 万公里</strong> 提升至 <strong>15 年 150 万公里</strong>。</p>
         <div class="hero-actions">
           <a href="#projects" class="btn btn-primary">
             <span data-i18n="hero.btn.projects">查看项目</span>
@@ -102,26 +140,30 @@
       </div>
       <div class="hero-visual">
         <div class="avatar-wrap">
-          <div class="avatar-ring"></div>
-          <img src="profile.jpg" alt="Kai Chen" class="avatar-img" />
-          <div class="avatar-glow"></div>
+          <div class="avatar-ring" aria-hidden="true"></div>
+          <picture>
+            <source srcset="profile.webp" type="image/webp" />
+            <img src="profile.jpg" alt="陈凯的个人照片" class="avatar-img"
+                 width="320" height="320" decoding="async" fetchpriority="high" />
+          </picture>
+          <div class="avatar-glow" aria-hidden="true"></div>
         </div>
         <div class="floating-card card-1">
-          <div class="card-icon">🔋</div>
+          <div class="card-icon" aria-hidden="true">🔋</div>
           <div class="card-info">
-            <div class="card-title" data-i18n="card.1.title">天行电芯</div>
-            <div class="card-sub" data-i18n="card.1.sub">主力产品可靠性</div>
+            <div class="card-title" data-i18n="card.1.title">主力电芯平台</div>
+            <div class="card-sub" data-i18n="card.1.sub">商用车可靠性</div>
           </div>
         </div>
         <div class="floating-card card-2">
-          <div class="card-icon">🏆</div>
+          <div class="card-icon" aria-hidden="true">🏆</div>
           <div class="card-info">
             <div class="card-title" data-i18n="card.2.title">总裁金奖</div>
             <div class="card-sub" data-i18n="card.2.sub">公司最高技术奖</div>
           </div>
         </div>
         <div class="floating-card card-3">
-          <div class="card-icon">🚛</div>
+          <div class="card-icon" aria-hidden="true">🚛</div>
           <div class="card-info">
             <div class="card-title" data-i18n="card.3.title">商用车</div>
             <div class="card-sub" data-i18n="card.3.sub">三大技术路线</div>
@@ -147,17 +189,13 @@
           <p data-i18n="about.p1">我是一名专注于<strong>电芯可靠性与安全</strong>领域的工程师，目前就职于宁德时代可靠安全部，担任商用车电芯团队负责人。</p>
           <p data-i18n="about.p2">我带领 6 人团队全面负责商用车产品线电芯层级的安全与可靠性管理，覆盖<strong>长寿命、大容量、快充</strong>共三条技术体系路线，支撑 40+ 个研发、量产、售后项目。</p>
           <p data-i18n="about.p3">我擅长系统性风险管控与数据驱动的根因分析，在复杂工况下精准定位问题本质并推动跨部门改善落地。主导搭建商用车知识沉淀体系，快速培养 3 名应届生独立负责项目。</p>
-          <p data-i18n="about.p4">作为可靠性技术接口人，我对接宇通、中车、沃尔沃等头部商用车客户，负责可靠性评估与技术交流。</p>
+          <p data-i18n="about.p4">作为可靠性技术接口人，我对接国内头部客车厂、轨道交通装备龙头及欧洲商用车企业等客户，负责可靠性评估与技术交流。</p>
         </div>
         <div class="about-info">
           <div class="info-card">
             <h3 data-i18n="about.info.title">基本信息</h3>
             <ul class="info-list">
               <li><span data-i18n="about.info.name">姓名</span><strong data-i18n="about.info.nameVal">陈凯</strong></li>
-              <li><span data-i18n="about.info.gender">性别</span><strong data-i18n="about.info.genderVal">男</strong></li>
-              <li><span data-i18n="about.info.ethnicity">民族</span><strong data-i18n="about.info.ethnicityVal">瑶族</strong></li>
-              <li><span data-i18n="about.info.birth">出生</span><strong data-i18n="about.info.birthVal">2000 年 10 月</strong></li>
-              <li><span data-i18n="about.info.hometown">籍贯</span><strong data-i18n="about.info.hometownVal">湖南永州</strong></li>
               <li><span data-i18n="about.info.location">所在地</span><strong data-i18n="about.info.locationVal">福建宁德</strong></li>
               <li><span data-i18n="about.info.language">语言</span><strong data-i18n="about.info.languageVal">普通话（母语）· 英语（工作语言）</strong></li>
               <li><span data-i18n="about.info.target">求职意向</span><strong data-i18n="about.info.targetVal">可靠性工程师</strong></li>
@@ -192,31 +230,31 @@
             <div class="timeline-badge" data-i18n="exp.role1.badge">🎯 团队管理</div>
             <ul class="timeline-points">
               <li>
-                <span class="point-icon">👥</span>
+                <span class="point-icon" aria-hidden="true">👥</span>
                 <div>
                   <strong data-i18n="exp.role1.p1.title">商用车业务质量负责人</strong>
                   <p data-i18n="exp.role1.p1.desc">带领 6 人团队全面管理商用车产品线电芯安全与可靠性，覆盖长寿命、大容量、快充三条技术路线</p>
                 </div>
               </li>
               <li>
-                <span class="point-icon">📊</span>
+                <span class="point-icon" aria-hidden="true">📊</span>
                 <div>
                   <strong data-i18n="exp.role1.p2.title">40+ 项目全生命周期管理</strong>
-                  <p data-i18n="exp.role1.p2.desc">负责研发、量产、售后项目的安全可靠性，完成 20 年质保、672Ah 大容量、8C 快充等前沿项目量产落地</p>
+                  <p data-i18n="exp.role1.p2.desc">负责研发、量产、售后项目的安全可靠性，完成超长质保、超大容量、超快充等前沿项目量产落地</p>
                 </div>
               </li>
               <li>
-                <span class="point-icon">📚</span>
+                <span class="point-icon" aria-hidden="true">📚</span>
                 <div>
                   <strong data-i18n="exp.role1.p3.title">知识体系与人才培养</strong>
                   <p data-i18n="exp.role1.p3.desc">搭建商用车知识沉淀体系，快速培养 3 名应届生独立负责项目</p>
                 </div>
               </li>
               <li>
-                <span class="point-icon">🤝</span>
+                <span class="point-icon" aria-hidden="true">🤝</span>
                 <div>
                   <strong data-i18n="exp.role1.p4.title">头部客户技术对接</strong>
-                  <p data-i18n="exp.role1.p4.desc">作为可靠性技术接口人对接宇通、中车、沃尔沃等头部商用车客户</p>
+                  <p data-i18n="exp.role1.p4.desc">作为可靠性技术接口人对接国内头部客车厂、轨道交通装备龙头及欧洲商用车企业</p>
                 </div>
               </li>
             </ul>
@@ -239,24 +277,24 @@
             </div>
             <ul class="timeline-points">
               <li>
-                <span class="point-icon">🔋</span>
+                <span class="point-icon" aria-hidden="true">🔋</span>
                 <div>
-                  <strong data-i18n="exp.role2.p1.title">天行电芯全流程可靠性管理</strong>
+                  <strong data-i18n="exp.role2.p1.title">主力商用车电芯平台全流程可靠性管理</strong>
                   <p data-i18n="exp.role2.p1.desc">负责商用车主力产品开发与验证全流程可靠性风险管理，覆盖产品设计、试制验证、批量生产及售后评估</p>
                 </div>
               </li>
               <li>
-                <span class="point-icon">🛠️</span>
+                <span class="point-icon" aria-hidden="true">🛠️</span>
                 <div>
                   <strong data-i18n="exp.role2.p2.title">矿卡质量改善攻关</strong>
                   <p data-i18n="exp.role2.p2.desc">针对矿卡高强度工况下的电芯失效问题，搭建多层级 FTA 失效树定位根因，推动 10+ 项改善方案落地</p>
                 </div>
               </li>
               <li>
-                <span class="point-icon">📈</span>
+                <span class="point-icon" aria-hidden="true">📈</span>
                 <div>
                   <strong data-i18n="exp.role2.p3.title">量化成果显著</strong>
-                  <p data-i18n="exp.role2.p3.desc">推动天行电芯质保能力从 8 年 80 万公里提升至 15 年 150 万公里；矿卡工况失效比例降低 95% 以上</p>
+                  <p data-i18n="exp.role2.p3.desc">推动主力平台电芯质保能力从 8 年 80 万公里提升至 15 年 150 万公里；矿卡工况失效比例降低 95% 以上</p>
                 </div>
               </li>
             </ul>
@@ -279,14 +317,14 @@
       </div>
       <div class="projects-grid">
 
-        <!-- 天行电芯 -->
+        <!-- 商用车主力电芯平台 -->
         <div class="project-card featured">
           <div class="project-badge" data-i18n="proj.1.badge">🏆 总裁金奖 · 主力产品</div>
           <div class="project-header">
-            <h3 data-i18n="proj.1.title">天行电芯</h3>
+            <h3 data-i18n="proj.1.title">商用车主力电芯平台</h3>
             <span class="project-role" data-i18n="proj.1.role">可靠性负责人</span>
           </div>
-          <p class="project-desc" data-i18n="proj.1.desc">负责商用车主力产品「天行电芯」开发与验证全流程可靠性风险管理，覆盖产品设计、试制验证及批量生产、售后评估全生命周期。主导可靠性验证方案设计与优化，协同跨部门团队制定设计、工艺及应用边界规范。</p>
+          <p class="project-desc" data-i18n="proj.1.desc">负责主力商用车电芯平台开发与验证全流程可靠性风险管理，覆盖产品设计、试制验证及批量生产、售后评估全生命周期。主导可靠性验证方案设计与优化，协同跨部门团队制定设计、工艺及应用边界规范，推动质保能力从 8 年 80 万公里提升至 15 年 150 万公里。</p>
           <div class="project-metrics">
             <div class="metric">
               <div class="metric-value"><span data-i18n="proj.1.metric1.value">15</span><span data-i18n="proj.1.metric1.unit1">年</span><span data-i18n="proj.1.metric1.unit2">/150万km</span></div>
@@ -304,12 +342,12 @@
 
         <!-- 矿卡质量改善 -->
         <div class="project-card">
-          <div class="project-badge award" data-i18n="proj.2.badge">🦴 硬骨头奖 · 质量攻关</div>
+          <div class="project-badge award" data-i18n="proj.2.badge">🏅 硬骨头奖 · 质量攻关</div>
           <div class="project-header">
             <h3 data-i18n="proj.2.title">矿卡电芯质量改善</h3>
             <span class="project-role" data-i18n="proj.2.role">项目负责人</span>
           </div>
-          <p class="project-desc" data-i18n="proj.2.desc">负责矿区用卡车的电芯安全可靠性攻关。针对市场端电芯容量快速衰减及界面析锂失效，搭建多层级 FTA 失效树定位核心根因，设计并验证 10+ 项改善方案，推动改善措施在研发项目全面落地与横向推广。</p>
+          <p class="project-desc" data-i18n="proj.2.desc">矿区高强度工况下，市场端电芯出现容量快速衰减及界面析锂失效。搭建多层级 FTA 失效树定位核心根因，设计并验证 10+ 项改善方案，推动改善措施在研发项目全面落地与横向推广。</p>
           <div class="project-metrics">
             <div class="metric">
               <div class="metric-value"><span data-i18n="proj.2.metric1.value">-95</span><span data-i18n="proj.2.metric1.unit1">%+</span></div>
@@ -344,7 +382,7 @@
             </div>
           </div>
           <div class="project-tags" data-i18n-tags="proj.3.tags">
-            <span>20年质保</span><span>672Ah 大容量</span><span>8C 快充</span><span>标准体系</span>
+            <span>超长质保</span><span>超大容量</span><span>超快充</span><span>标准体系</span>
           </div>
         </div>
 
@@ -578,35 +616,35 @@
       </div>
       <div class="awards-grid">
         <div class="award-item featured">
-          <div class="award-icon gold">🥇</div>
+          <div class="award-icon gold" aria-hidden="true">🥇</div>
           <div class="award-content">
             <h4 data-i18n="awards.1.title">技术创新总裁金奖</h4>
             <p data-i18n="awards.1.desc">宁德时代 · 公司级最高技术奖项 · 2025</p>
           </div>
         </div>
         <div class="award-item featured">
-          <div class="award-icon">🦴</div>
+          <div class="award-icon" aria-hidden="true">🦴</div>
           <div class="award-content">
             <h4 data-i18n="awards.2.title">硬骨头质量改善奖</h4>
             <p data-i18n="awards.2.desc">宁德时代 · 公司级重大质量攻关奖 · 2025</p>
           </div>
         </div>
         <div class="award-item">
-          <div class="award-icon">🎓</div>
+          <div class="award-icon" aria-hidden="true">🎓</div>
           <div class="award-content">
             <h4 data-i18n="awards.3.title">E3 研究生奖学金（€5000）</h4>
-            <p data-i18n="awards.3.desc">都柏林圣三一学院 · 2022</p>
+            <p data-i18n="awards.3.desc">都柏林圣三一大学 · 2022</p>
           </div>
         </div>
         <div class="award-item">
-          <div class="award-icon silver">🥈</div>
+          <div class="award-icon silver" aria-hidden="true">🥈</div>
           <div class="award-content">
             <h4 data-i18n="awards.4.title">网络技术挑战赛全国二等奖（第四名）</h4>
             <p data-i18n="awards.4.desc">中国高校计算机大赛 · 2021</p>
           </div>
         </div>
         <div class="award-item">
-          <div class="award-icon">📊</div>
+          <div class="award-icon" aria-hidden="true">📊</div>
           <div class="award-content">
             <h4 data-i18n="awards.5.title">美国大学生数学建模竞赛 H 奖</h4>
             <p data-i18n="awards.5.desc">COMAP · 2020</p>
@@ -627,21 +665,21 @@
           <p data-i18n="contact.desc">如果您对我的经历感兴趣，欢迎通过以下方式联系我</p>
           <div class="contact-methods">
             <a href="mailto:1014283296@qq.com" class="contact-item">
-              <div class="contact-icon">✉️</div>
+              <div class="contact-icon" aria-hidden="true">✉️</div>
               <div>
                 <div class="contact-label" data-i18n="contact.email.label">邮箱</div>
                 <div class="contact-value" data-i18n="contact.email.value">1014283296@qq.com</div>
               </div>
             </a>
-            <a href="tel:+8615116420394" class="contact-item">
-              <div class="contact-icon">📱</div>
+            <div class="contact-item">
+              <div class="contact-icon" aria-hidden="true">📱</div>
               <div>
                 <div class="contact-label" data-i18n="contact.phone.label">电话</div>
-                <div class="contact-value" data-i18n="contact.phone.value">+86 151 1642 0394</div>
+                <div class="contact-value" data-i18n="contact.phone.value">151****0394</div>
               </div>
-            </a>
+            </div>
             <a href="chenkai-resume.pdf" download class="contact-item" id="contactResumeBtn">
-              <div class="contact-icon">📄</div>
+              <div class="contact-icon" aria-hidden="true">📄</div>
               <div>
                 <div class="contact-label" data-i18n="contact.resume.label">简历下载</div>
                 <div class="contact-value" data-i18n="contact.resume.value">PDF 版本</div>

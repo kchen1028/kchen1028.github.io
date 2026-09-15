@@ -1,109 +1,119 @@
 # 陈凯 · 个人简历网页
 
-> 商用车可靠性工程师 · 宁德时代
+> 电芯可靠性团队负责人 · 宁德时代
 
-一个现代化的个人简历展示网站，基于纯 HTML / CSS / JavaScript 构建，可直接部署到 GitHub Pages。
+纯 HTML / CSS / JavaScript 构建的个人简历网站，部署在 GitHub Pages：
+**https://kchen1028.github.io**
 
 ## ✨ 特性
 
-- 🎨 现代化渐变设计，精致动效
-- 📱 完全响应式，适配手机/平板/桌面
-- ⚡ 纯静态页面，加载飞快
-- 🌠 平滑滚动 + 滚动显现动画
-- 🎯 导航栏滚动高亮
-- 🚀 一键部署到 GitHub Pages
+- 现代化渐变设计，动效克制
+- 中英双语切换（语言偏好写入 `localStorage`）
+- 完全响应式，适配手机 / 平板 / 桌面
+- 纯静态，无构建步骤，无外部 CDN 依赖
+- 尊重系统「减少动态效果」设置
+- 完整的打印样式（Ctrl+P 可直接存 PDF）
+- 结构化数据（JSON-LD）、Open Graph 分享卡、favicon
 
 ## 📂 项目结构
 
 ```
-chenkai-resume/
-├── index.html      # 主页面
-├── styles.css      # 样式文件
-├── script.js       # 交互脚本
-├── .nojekyll       # GitHub Pages 配置
-└── README.md       # 说明文档
+kchen1028.github.io/
+├── index.html              # 主页面（内容源）
+├── styles.css              # 样式
+├── script.js               # 交互：导航、菜单、滚动动画
+├── i18n.js                 # 中英双语翻译 + 语言切换引擎
+│
+├── profile.jpg / .webp     # 头像（WebP 优先，JPEG 兜底）
+├── og-cover.png            # 社交分享卡 1200×630
+├── favicon.ico             # 站点图标（多尺寸）
+├── favicon-32.png
+├── favicon-48.png
+├── apple-touch-icon.png    # iOS 添加到主屏
+├── icon-512.png
+│
+├── chenkai-resume.pdf      # 中文简历
+├── Kai_Chen_Resume_EN.pdf  # 英文简历
+│
+├── robots.txt
+├── sitemap.xml
+├── .nojekyll               # GitHub Pages 配置
+└── README.md
 ```
 
-## 🚀 部署到 GitHub Pages
+## 🚀 部署
 
-### 方法一：网页上传（无需安装 Git）
-
-1. **创建 GitHub 仓库**
-   - 登录 [GitHub](https://github.com)，点击右上角 **+** → **New repository**
-   - 仓库名：`chenkai-resume`（或你喜欢的名字）
-   - 选择 **Public**
-   - 勾选 **Add a README file** 可选，不勾也可以
-   - 点击 **Create repository**
-
-2. **上传文件**
-   - 在仓库页面点击 **uploading an existing file**
-   - 把本项目下的 **所有文件** 拖拽进去（index.html、styles.css、script.js、.nojekyll）
-   - 底部点击 **Commit changes**
-
-3. **开启 GitHub Pages**
-   - 进入仓库 → **Settings**（顶部菜单栏）
-   - 左侧找到 **Pages**
-   - **Source** 选择 `Deploy from a branch`
-   - **Branch** 选择 `main` + `/ (root)`
-   - 点击 **Save**
-   - 稍等 1~2 分钟，页面上方会显示访问链接：
-     `https://你的用户名.github.io/chenkai-resume/`
-
-### 方法二：使用 Git 命令
+推送到 `main` 分支即可，GitHub Pages 会自动发布：
 
 ```bash
-# 1. 初始化仓库
-git init
 git add .
-git commit -m "Initial commit: resume website"
-git branch -M main
-
-# 2. 关联远程仓库（替换成你的地址）
-git remote add origin https://github.com/你的用户名/chenkai-resume.git
-git push -u origin main
-
-# 3. 然后在 GitHub Settings 中开启 Pages 即可
+git commit -m "update"
+git push
 ```
 
-### 方法三：部署为个人主页
+## ✏️ 修改内容
 
-- 仓库名设置为 `你的用户名.github.io`
-- 上传文件后访问 `https://你的用户名.github.io/`
+### ⚠️ 文案改两处，否则不生效
 
-## 🔧 自定义内容
+页面文案存在**两个地方**：
 
-### 修改文字内容
+1. `index.html` —— 元素内的中文（内容源）
+2. `i18n.js` —— `zh` 和 `en` 两份字典
 
-直接编辑 `index.html`，找到对应模块的文字替换即可。
+运行时 `i18n.js` 会用字典覆盖 `index.html` 的文字。**只改 `index.html` 不会生效**——
+必须同时更新 `i18n.js` 里对应的 `zh` 值。
+
+改完可以用仓库外的 `_diff_i18n.py` 校验两份是否一致：
+
+```bash
+python _diff_i18n.py     # 输出「不一致: 0」即同步完成
+```
 
 ### 修改主题色
 
-在 `styles.css` 顶部 `:root` 中修改：
+`styles.css` 顶部的 `:root`：
 
 ```css
---primary: #1e40af;      /* 主色 */
---primary-light: #3b82f6; /* 主色亮调 */
---accent: #0ea5e9;        /* 强调色 */
---accent-2: #06b6d4;      /* 第二强调色 */
+--primary: #1e3a8a;        /* 主色 */
+--primary-light: #3b82f6;  /* 主色亮调 */
+--accent: #0ea5e9;         /* 强调色 */
+--accent-2: #06b6d4;       /* 第二强调色 */
 ```
 
-### 添加头像
+### 替换头像
 
-1. 把头像图片放到项目根目录，命名为 `avatar.jpg`
-2. 在 `index.html` 中找到 `.avatar-initials` 部分，替换为 `<img src="avatar.jpg" alt="陈凯" />`
+1. 换掉根目录的 `profile.jpg`
+2. 重新生成 WebP：
+   ```bash
+   python -c "from PIL import Image; im=Image.open('profile.jpg').convert('RGB'); \
+   w,h=im.size; im.resize((640,int(h*640/w)), Image.LANCZOS).save('profile.webp','WEBP',quality=74,method=6)"
+   ```
+3. 同步更新 `og-cover.png`（1200×630 的分享卡）
+
+### 字体
+
+不加载任何外部字体 CDN，走系统字体栈（`styles.css` 的 `body`）。
+这是有意为之——Google Fonts 在中国大陆无法访问，会导致首屏长时间白屏。
 
 ## 📝 内容模块
 
 | 模块 | 说明 |
 |------|------|
-| Hero | 个人介绍、核心数据、浮动卡片视觉效果 |
+| Hero | 个人介绍、核心数据、浮动卡片 |
 | 关于我 | 个人简介 + 基本信息卡片 |
 | 工作经历 | 时间线形式展示职业历程 |
 | 项目经验 | 卡片式展示核心项目，含量化成果 |
 | 教育背景 | 学历 + 在校荣誉 |
-| 专业技能 | 技能进度条，分三类展示 |
+| 专业技能 | 分三类展示，圆点表示熟练度 |
 | 荣誉奖项 | 获奖列表 |
-| 联系方式 | 电话 + 邮箱 |
+| 联系方式 | 邮箱 + 简历下载 |
+
+## 🔒 内容注意
+
+页面为**公开可索引**状态。文案已做脱敏处理：不含内部产品代号、
+客户名称和具体性能参数，只保留相对改善幅度。
+
+新增内容时请沿用这个原则。
 
 ## 📄 License
 
