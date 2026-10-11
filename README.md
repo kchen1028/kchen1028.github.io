@@ -23,6 +23,7 @@ kchen1028.github.io/
 ├── styles.css              # 样式
 ├── script.js               # 交互：导航、菜单、滚动动画
 ├── i18n.js                 # 中英双语翻译 + 语言切换引擎
+├── analytics.js            # 访问统计（可选，未填 ID 时不加载）
 │
 ├── profile.jpg / .webp     # 头像（WebP 优先，JPEG 兜底）
 ├── og-cover.png            # 社交分享卡 1200×630
@@ -126,6 +127,22 @@ python _diff_i18n.py     # 输出「不一致: 0」即同步完成
 不属于内部代号。`_validate_site.py` 的脱敏黑名单里已排除该词。
 
 新增内容时请沿用这个原则（客户名与具体参数脱敏，公开产品名可留）。
+
+## 📊 访问统计（可选）
+
+用百度统计，**数据只在 tongji.baidu.com 后台可见，页面上不显示任何数字**。
+
+启用：在 `analytics.js` 顶部把 `BAIDU_TONGJI_ID` 填成 32 位 site code。
+**留空 = 不加载统计脚本、零外部请求**，站点保持原始的无依赖状态。
+
+- 仅在 `kchen1028.github.io` 下生效——本地预览、`file://` 打开、无头截图都不会污染数据
+  （日后若绑定自有域名，记得同步改 `analytics.js` 里的域名判断，否则统计会静默失效）
+- 异步动态注入，不阻塞渲染（统计脚本挂了页面照常）
+- 已埋事件：`resume/download/{zh,en}`、`lang/switch/{zh,en}`、`contact/email`
+- `_validate_site.py` 已改为白名单模式：放行 `hm.baidu.com`，其它外部域名继续拦截
+
+完整方案（选型实测、后台看哪些指标、UTM 渠道标记）见
+`../html分析报告/站点访问统计接入方案.html`。
 
 ## 📄 License
 
