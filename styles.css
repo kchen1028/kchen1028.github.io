@@ -954,6 +954,26 @@ button:focus-visible {
   font-weight: 600;
 }
 
+.project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.project-date {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.project-date::before {
+  content: '·';
+  margin: 0 8px;
+  color: var(--text-muted);
+}
+
 .project-desc {
   font-size: 14px;
   color: var(--text-secondary);
@@ -1428,6 +1448,15 @@ button:focus-visible {
   .lang-btn {
     padding: 3px 6px;
     font-size: 12px;
+  }
+
+  /* 窄屏下项目时间会换行，此时行首的「·」会变成孤立的悬挂点，改用它做间距 */
+  .project-date::before {
+    content: none;
+  }
+
+  .project-date {
+    margin-left: 8px;
   }
 
   .nav-toggle {

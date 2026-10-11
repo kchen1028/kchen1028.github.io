@@ -69,6 +69,15 @@ git push
 python _diff_i18n.py     # 输出「不一致: 0」即同步完成
 ```
 
+### 替换简历 PDF
+
+把最新导出的中文简历直接覆盖为 `chenkai-resume.pdf`（英文简历为
+`Kai_Chen_Resume_EN.pdf`），页面上的两个下载按钮无需改动：
+
+- 中文界面下载 `chenkai-resume.pdf`，英文界面下载 `Kai_Chen_Resume_EN.pdf`（见 `i18n.js` 的 `setLanguage`）
+- 简历请保持 **1 页**，与线上文案口径一致（见下节「内容注意」）
+- ⚠️ 该 PDF 是**公开可下载**的，导出前确认手机号等信息是否要保留
+
 ### 修改主题色
 
 `styles.css` 顶部的 `:root`：
