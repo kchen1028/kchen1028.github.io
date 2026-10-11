@@ -12,11 +12,16 @@
 (function () {
   'use strict';
 
-  var BAIDU_TONGJI_ID = '';   // ← 例：'a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6'
+  var BAIDU_TONGJI_ID = 'e36d9abb3d4177d940d39a49e8d31ae3';   // 32 位 site code，留空 = 不统计
 
   var host = location.hostname || '';
   var isProd = /(^|\.)kchen1028\.github\.io$/.test(host);
-  var active = !!BAIDU_TONGJI_ID && isProd;
+  // 格式自检：ID 填错时不要静默变成"没数据"，留一条可排查的提示
+  var idOk = /^[0-9a-f]{32}$/i.test(BAIDU_TONGJI_ID);
+  if (BAIDU_TONGJI_ID && !idOk) {
+    console.warn('[analytics] BAIDU_TONGJI_ID 不是 32 位十六进制，已跳过统计');
+  }
+  var active = idOk && isProd;
 
   if (active) {
     window._hmt = window._hmt || [];
